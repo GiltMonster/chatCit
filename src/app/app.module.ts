@@ -10,20 +10,33 @@ import { environment } from 'src/environments/environment.development';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { SingInComponent } from './components/sing-in/sing-in.component';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SingInComponent,
   ],
   imports: [
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    AngularFireModule.initializeApp(environment.firebase),
+    provideAuth(() => getAuth(undefined)),
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
