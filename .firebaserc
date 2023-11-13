@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chatcit-afcc8": {
+      "hosting": {
+        "chatCit": [
+          "chatcit-afcc8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chatcit-afcc8"
+  }
+}
